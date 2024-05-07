@@ -1,0 +1,452 @@
+[gd_scene load_steps=34 format=3 uid="uid://cfhr3ag2gpfoo"]
+
+[ext_resource type="Script" path="res://scripts/battlescreen.gd" id="1_213fa"]
+[ext_resource type="Texture2D" uid="uid://b8oyic3lirw7s" path="res://assets/pokemon sprites/A128EADB-6BFA-4826-966D-3CB568D1D7F8.png" id="1_bkbk0"]
+[ext_resource type="Texture2D" uid="uid://dui82yjb73yww" path="res://assets/backround/battle_backround.png" id="1_gmumk"]
+[ext_resource type="Texture2D" uid="uid://1ddc4nlvx3qe" path="res://assets/pokemon sprites/5CF49D6C-FC69-4521-9F6B-F265E7D75162.png" id="3_lg1su"]
+[ext_resource type="Texture2D" uid="uid://cbi5i7of17nqu" path="res://assets/pokemon sprites/C68006F2-2C62-4466-BD82-8F46F964CC7F.PNG" id="5_ef8wd"]
+[ext_resource type="Texture2D" uid="uid://c01r3gn5hgomn" path="res://assets/pokemon sprites/43ABE1C7-F354-48D8-985D-192350C21FEF.PNG" id="6_iyovn"]
+[ext_resource type="Texture2D" uid="uid://bxrw4nqx0qihl" path="res://assets/pokemon sprites/E39ADA16-ED10-4F15-951D-2BC35684C3C6.PNG" id="6_vsen5"]
+[ext_resource type="Texture2D" uid="uid://dvjbdvqawycax" path="res://assets/pokemon sprites/3B602F9B-3271-4E73-873F-49B1AAA66C23.PNG" id="7_ru2ep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7l2m"]
+atlas = ExtResource("3_lg1su")
+region = Rect2(0, 300, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdfjy"]
+atlas = ExtResource("3_lg1su")
+region = Rect2(1732, 300, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i13pn"]
+atlas = ExtResource("1_bkbk0")
+region = Rect2(0, 300, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfm5l"]
+atlas = ExtResource("1_bkbk0")
+region = Rect2(1732, 300, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2kvu"]
+atlas = ExtResource("5_ef8wd")
+region = Rect2(0, 458, 1732, 1900)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6sep"]
+atlas = ExtResource("5_ef8wd")
+region = Rect2(1732, 458, 1732, 1900)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nt7tp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r7l2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdfjy")
+}],
+"loop": true,
+"name": &"blastoise",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i13pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfm5l")
+}],
+"loop": true,
+"name": &"charizard",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2kvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6sep")
+}],
+"loop": true,
+"name": &"venasaur",
+"speed": 3.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xsrn"]
+font_size = 196
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3pfce"]
+font_size = 140
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_331jf"]
+font_size = 120
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uum7x"]
+atlas = ExtResource("6_iyovn")
+region = Rect2(0, 150, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf3gb"]
+atlas = ExtResource("6_iyovn")
+region = Rect2(1732, 150, 1732, 2500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evvko"]
+atlas = ExtResource("7_ru2ep")
+region = Rect2(0, 700, 1732, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ait"]
+atlas = ExtResource("7_ru2ep")
+region = Rect2(1732, 700, 1732, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmkyv"]
+atlas = ExtResource("6_vsen5")
+region = Rect2(0, 500, 1732, 2000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67jho"]
+atlas = ExtResource("6_vsen5")
+region = Rect2(1732, 500, 1732, 2000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfcbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uum7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf3gb")
+}],
+"loop": true,
+"name": &"blastoise",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evvko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ait")
+}],
+"loop": true,
+"name": &"charizard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmkyv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67jho")
+}],
+"loop": true,
+"name": &"vensaur",
+"speed": 3.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnwse"]
+bg_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x08tf"]
+line_spacing = 2.08165e-12
+font_size = 50
+
+[sub_resource type="Animation" id="Animation_ih50s"]
+resource_name = "enemy damge"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPokemon_Sprite:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0f4xm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPokemon_Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PPokemon_Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera2D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(574, 324)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CPokemon_Sprite:offset")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PPokemon_Sprite:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ndeha"]
+resource_name = "player damage"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PPokemon_Sprite:self_modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(574, 324), Vector2(595, 345), Vector2(534, 334), Vector2(510, 282), Vector2(616, 375), Vector2(633, 290), Vector2(575, 324)]
+}
+
+[sub_resource type="Animation" id="Animation_8vp1c"]
+resource_name = "enemy faint"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CPokemon_Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2.08165e-12, 2.08165e-12), Vector2(2500, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_4pnjf"]
+resource_name = "player faint"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PPokemon_Sprite:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2300, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unsc2"]
+_data = {
+"RESET": SubResource("Animation_0f4xm"),
+"enemy damge": SubResource("Animation_ih50s"),
+"enemy faint": SubResource("Animation_8vp1c"),
+"player damage": SubResource("Animation_ndeha"),
+"player faint": SubResource("Animation_4pnjf")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 1.17
+anchor_bottom = 1.228
+offset_right = -208.84
+offset_bottom = -148.744
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_213fa")
+
+[node name="BattleBackround" type="Sprite2D" parent="."]
+position = Vector2(575.5, 325.5)
+scale = Vector2(1.905, 1.41555)
+texture = ExtResource("1_gmumk")
+
+[node name="PPokemon_Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(325, 314)
+scale = Vector2(0.223154, 0.17249)
+sprite_frames = SubResource("SpriteFrames_nt7tp")
+animation = &"blastoise"
+autoplay = "venasaur"
+frame_progress = 0.777827
+
+[node name="PPoke_Name" type="Label" parent="PPokemon_Sprite"]
+offset_left = 1546.02
+offset_top = 162.328
+offset_right = 2644.02
+offset_bottom = 430.328
+label_settings = SubResource("LabelSettings_2xsrn")
+
+[node name="PPoke_Status" type="Label" parent="PPokemon_Sprite"]
+offset_left = 2590.14
+offset_top = 197.113
+offset_right = 3186.14
+offset_bottom = 389.113
+label_settings = SubResource("LabelSettings_3pfce")
+
+[node name="PPoke_Health" type="ProgressBar" parent="PPokemon_Sprite"]
+modulate = Color(0.0470588, 0.968627, 0, 1)
+offset_left = 2501.0
+offset_top = 470.0
+offset_right = 3504.0
+offset_bottom = 551.0
+max_value = 500.0
+value = 500.0
+
+[node name="Health_Label" type="Label" parent="PPokemon_Sprite/PPoke_Health"]
+layout_mode = 0
+offset_left = -941.539
+offset_top = -23.5974
+offset_right = -461.539
+offset_bottom = 181.403
+label_settings = SubResource("LabelSettings_331jf")
+
+[node name="CPokemon_Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(842, 153)
+scale = Vector2(0.177414, 0.18)
+sprite_frames = SubResource("SpriteFrames_nfcbq")
+animation = &"charizard"
+autoplay = "blastoise"
+offset = Vector2(2.08165e-12, 2.08165e-12)
+
+[node name="CPoke_Name" type="Label" parent="CPokemon_Sprite"]
+offset_left = -4531.77
+offset_top = -361.111
+offset_right = -3433.77
+offset_bottom = -93.1108
+label_settings = SubResource("LabelSettings_2xsrn")
+
+[node name="CPoke_Status" type="Label" parent="CPokemon_Sprite"]
+offset_left = -3398.83
+offset_top = -333.333
+offset_right = -2451.83
+offset_bottom = -111.333
+label_settings = SubResource("LabelSettings_3pfce")
+
+[node name="CPoke_Health" type="ProgressBar" parent="CPokemon_Sprite"]
+modulate = Color(0.0470588, 0.968627, 0, 1)
+offset_left = -3444.0
+offset_top = -56.0
+offset_right = -2255.0
+offset_bottom = 25.0
+max_value = 500.0
+value = 500.0
+
+[node name="CHealth_Label" type="Label" parent="CPokemon_Sprite/CPoke_Health"]
+layout_mode = 0
+offset_left = -1217.41
+offset_top = -88.4444
+offset_right = -642.414
+offset_bottom = 116.556
+label_settings = SubResource("LabelSettings_331jf")
+
+[node name="Textbox" type="Panel" parent="."]
+z_index = 5
+offset_left = 44.0
+offset_top = 501.0
+offset_right = 1076.0
+offset_bottom = 628.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xnwse")
+
+[node name="TextboxLabel" type="Label" parent="Textbox"]
+z_index = 5
+layout_mode = 0
+offset_left = 25.0
+offset_top = -4.0
+offset_right = 1030.0
+offset_bottom = 123.0
+label_settings = SubResource("LabelSettings_x08tf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Actions" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.981
+offset_left = 43.0
+offset_top = 169.0
+offset_right = -126.0
+offset_bottom = -6.68804
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.05, 1.05)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.85
+
+[node name="Attack" type="Button" parent="CanvasLayer/Actions"]
+layout_mode = 2
+text = "Attack"
+
+[node name="Poison" type="Button" parent="CanvasLayer/Actions"]
+layout_mode = 2
+text = "Poison"
+
+[node name="Howl" type="Button" parent="CanvasLayer/Actions"]
+layout_mode = 2
+text = "Howl"
+
+[node name="Protect" type="Button" parent="CanvasLayer/Actions"]
+layout_mode = 2
+text = "Protect"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_unsc2")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(574, 324)
+scale = Vector2(-12.4552, -3.84762)
+
+[connection signal="pressed" from="CanvasLayer/Actions/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="CanvasLayer/Actions/Poison" to="." method="_on_poison_pressed"]
+[connection signal="pressed" from="CanvasLayer/Actions/Howl" to="." method="_on_howl_pressed"]
+[connection signal="pressed" from="CanvasLayer/Actions/Protect" to="." method="_on_protect_pressed"]

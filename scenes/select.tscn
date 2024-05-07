@@ -1,0 +1,254 @@
+[gd_scene load_steps=22 format=3 uid="uid://b2n4t0veijmsj"]
+
+[ext_resource type="Texture2D" uid="uid://ch2rpuotwpwb0" path="res://assets/pokemon sprites/ive-been-doing-these-pokémon-sprite-recolourations-recently-v0-af77xtzb4hpb1.webp" id="1_1ec6r"]
+[ext_resource type="Texture2D" uid="uid://bbkct62xql5x3" path="res://assets/backround/choose.jpeg" id="1_gpxlg"]
+[ext_resource type="Texture2D" uid="uid://bk5l2wtci2doy" path="res://assets/pokemon sprites/charizard_select.png" id="2_3d3yd"]
+[ext_resource type="Texture2D" uid="uid://b71uib18qfqy8" path="res://assets/pokemon sprites/blastoise_select.png" id="4_7wq4y"]
+[ext_resource type="Script" path="res://scripts/Singleton.gd" id="6_g7obb"]
+[ext_resource type="Script" path="res://scripts/Global.gd" id="8_663d7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abtsh"]
+atlas = ExtResource("1_1ec6r")
+region = Rect2(0, 0, 640, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8iip7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abtsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_8b0us"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(76, -44)]
+}
+
+[sub_resource type="Animation" id="Animation_cin8j"]
+resource_name = "venasaur select"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(76, -44), Vector2(76, -63)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jco1"]
+_data = {
+"RESET": SubResource("Animation_8b0us"),
+"venasaur select": SubResource("Animation_cin8j")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dphti"]
+atlas = ExtResource("2_3d3yd")
+region = Rect2(0, 0, 1000, 1000)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rgupb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dphti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_3sldj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharizardSelect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, -60)]
+}
+
+[sub_resource type="Animation" id="Animation_r5bpx"]
+resource_name = "charizard"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharizardSelect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(80, -60), Vector2(80, -50)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fc708"]
+_data = {
+"RESET": SubResource("Animation_3sldj"),
+"charizard": SubResource("Animation_r5bpx")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lboym"]
+atlas = ExtResource("4_7wq4y")
+region = Rect2(0, 0, 108, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i34cn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lboym")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_smtd4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, -51)]
+}
+
+[sub_resource type="Animation" id="Animation_pnxj4"]
+resource_name = "blastoise select"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, -51), Vector2(72, -40)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qdrhr"]
+_data = {
+"RESET": SubResource("Animation_smtd4"),
+"blastoise select": SubResource("Animation_pnxj4")
+}
+
+[node name="Select" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.006
+offset_right = 2.0
+offset_bottom = 2.11197
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Singleton" type="Node2D" parent="."]
+script = ExtResource("6_g7obb")
+
+[node name="Pokemon" type="Node" parent="."]
+script = ExtResource("8_663d7")
+
+[node name="Choose" type="Sprite2D" parent="Pokemon"]
+position = Vector2(573, 324)
+scale = Vector2(2.25391, 1.70449)
+texture = ExtResource("1_gpxlg")
+
+[node name="Venasaur" type="Button" parent="Pokemon"]
+unique_name_in_owner = true
+offset_left = 262.0
+offset_top = 240.0
+offset_right = 418.0
+offset_bottom = 365.0
+action_mode = 0
+flat = true
+
+[node name="VenasaurSelect" type="AnimatedSprite2D" parent="Pokemon/Venasaur"]
+visible = false
+position = Vector2(76, -44)
+scale = Vector2(0.2875, 0.289062)
+sprite_frames = SubResource("SpriteFrames_8iip7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pokemon/Venasaur/VenasaurSelect"]
+libraries = {
+"": SubResource("AnimationLibrary_8jco1")
+}
+autoplay = "venasaur select"
+
+[node name="Charizard" type="Button" parent="Pokemon"]
+unique_name_in_owner = true
+offset_left = 491.0
+offset_top = 295.0
+offset_right = 650.0
+offset_bottom = 427.0
+flat = true
+
+[node name="CharizardSelect" type="AnimatedSprite2D" parent="Pokemon/Charizard"]
+visible = false
+position = Vector2(80, -60)
+scale = Vector2(0.1585, 0.1445)
+sprite_frames = SubResource("SpriteFrames_rgupb")
+autoplay = "default"
+frame_progress = 0.735433
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pokemon/Charizard/CharizardSelect"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fc708")
+}
+autoplay = "charizard"
+
+[node name="Blastoise" type="Button" parent="Pokemon"]
+unique_name_in_owner = true
+offset_left = 723.0
+offset_top = 244.0
+offset_right = 879.0
+offset_bottom = 368.0
+flat = true
+
+[node name="BlastoiseSelect" type="AnimatedSprite2D" parent="Pokemon/Blastoise"]
+visible = false
+position = Vector2(72, -51)
+scale = Vector2(1.37963, 1.32407)
+sprite_frames = SubResource("SpriteFrames_i34cn")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Pokemon/Blastoise/BlastoiseSelect"]
+libraries = {
+"": SubResource("AnimationLibrary_qdrhr")
+}
+autoplay = "blastoise select"
+
+[node name="GlobalVar" type="Node" parent="."]
